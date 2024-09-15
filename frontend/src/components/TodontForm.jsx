@@ -9,23 +9,26 @@ export const TodontForm = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(todont),
+            body: JSON.stringify({todont}),
         }
 
         fetch('http://localhost:3000',options)
             .then((resonse) => resonse.json())
-            .then((data) => { console.log(data) });
+            .then((data) => { console.log("From Backend ", data) });
     }
     
   return (
       <div>
           <form action="" onSubmit={(e) => {
               e.preventDefault();
-              addTodont({text });
+              addTodont(text);
               setText('');
    
           }}>
-              <input type="text" name="text-input" id="text-input" onInput={(e) => { setText(e.target.value) }} />
+              <input type="text" name="text-input" id="text-input" onInput={(e) => {
+                  setText(e.target.value)
+                  console.log(text);
+              }} />
               <button type="submit">Submit</button>
           </form>
     </div>
