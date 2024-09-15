@@ -18,5 +18,12 @@ app.get('/', (req, res) => {
     res.json('Hello from the Backend Goblins!');
 })
 
+app.post('/', (req, res) => {
+    const content = req.body;
+    console.log(content);
+
+    res.json(content);
+ })
+
 //Start server
 app.listen(PORT, () => {console.log('listening on port ' + PORT);});
