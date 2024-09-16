@@ -11,4 +11,4 @@ COPY . .
 # Exponera den port som din backend använder
 EXPOSE 3000
 
-CMD ["node", "app.js"]
+CMD ["npm", "run", "dev"]

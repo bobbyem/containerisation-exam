@@ -1,12 +1,17 @@
 const express = require('express');
+const connectDB = require('./db/db');
 const cors = require('cors');
 const env = require('dotenv').config();
 const app = express();
+
 
 const PORT = process.env.PORT || 3000;
 const corsOptions = {
     origin: 'http://localhost:5173',
 }
+
+//Try to connect to mongodb server
+connectDB();
 
 //Middleware
 //Parse JSON
