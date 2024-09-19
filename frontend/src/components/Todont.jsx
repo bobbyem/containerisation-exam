@@ -1,4 +1,4 @@
-export const Todont = ({ title, done, _id } = props) => {
+export const Todont = ({ title, _id } = props) => {
   const updateTodont = async (id) => {
     try {
       await fetch("http://localhost:3000/todont", {
@@ -15,7 +15,6 @@ export const Todont = ({ title, done, _id } = props) => {
   return (
     <li onClick={() => updateTodont(_id)}>
       <p>{title}</p>
-      <input type="checkbox" checked={done}></input>
     </li>
   );
 };
