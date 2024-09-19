@@ -1,12 +1,14 @@
-import './App.css'
-import { TodontForm } from './components/TodontForm';
+import "./App.css";
+import { TodontForm } from "./components/TodontForm";
+import { Todontlist } from "./components/Todontlist";
 
 function App() {
   return (
     <>
-      <TodontForm/>
+      <TodontForm />
+      <Todontlist />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
