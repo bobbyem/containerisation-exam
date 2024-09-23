@@ -5,9 +5,10 @@ const env = require("dotenv").config();
 const app = express();
 const router = require("./routes/todontroutes");
 
+const HOST_URL = process.env.HOST_URL || "http://localhost";
 const PORT = process.env.PORT || 3000;
 const corsOptions = {
-  origin: "http://13.60.62.126:5173",
+  origin: true,
 };
 
 //Try to connect to mongodb server
