@@ -1,7 +1,9 @@
+import { URL } from "../configs/url.js";
+
 export const Todont = ({ title, _id } = props) => {
   const updateTodont = async (id) => {
     try {
-      await fetch("http://localhost:3000/todont", {
+      await fetch(`${URL}/todont`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
