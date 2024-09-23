@@ -16,19 +16,39 @@ export const Todontlist = () => {
 
   return (
     <>
-      <button onClick={getTodonts}>Refresh</button>
-      <ul>
-        {todonts
-          ? todonts.map((todont) => (
-              <Todont
-                key={todont._id}
-                _id={todont._id}
-                title={todont.title}
-                done={todont.done}
-              /> // Interpolera med {} och sätt en unik key
-            ))
-          : null}
-      </ul>
+      <div>
+        <h2>Don´t</h2>
+        <button onClick={getTodonts}>Refresh</button>
+        <ul>
+          {todonts
+            ? todonts
+                .filter((todont) => !todont.done)
+                .map((todont) => (
+                  <Todont
+                    key={todont._id}
+                    _id={todont._id}
+                    title={todont.title}
+                    done={todont.done}
+                  /> // Interpolera med {} och sätt en unik key
+                ))
+            : null}
+        </ul>
+        <h2>But I still did</h2>
+        <ul>
+          {todonts
+            ? todonts
+                .filter((todont) => todont.done)
+                .map((todont) => (
+                  <Todont
+                    key={todont._id}
+                    _id={todont._id}
+                    title={todont.title}
+                    done={todont.done}
+                  /> // Interpolera med {} och sätt en unik key
+                ))
+            : null}
+        </ul>
+      </div>
     </>
   );
 };
