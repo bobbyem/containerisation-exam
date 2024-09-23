@@ -1,14 +1,14 @@
-const express = require('express');
-const connectDB = require('./db/db');
-const cors = require('cors');
-const env = require('dotenv').config();
+const express = require("express");
+const connectDB = require("./db/db");
+const cors = require("cors");
+const env = require("dotenv").config();
 const app = express();
-const router = require('./routes/todontroutes');
+const router = require("./routes/todontroutes");
 
 const PORT = process.env.PORT || 3000;
 const corsOptions = {
-    origin: 'http://localhost:5173',
-}
+  origin: "http://13.60.62.126:5173",
+};
 
 //Try to connect to mongodb server
 connectDB();
@@ -19,17 +19,18 @@ app.use(express.json());
 app.use(cors(corsOptions));
 app.use(router);
 
+app.get("/", (req, res) => {
+  res.json("Hello from the Backend Goblins!");
+});
 
-app.get('/', (req, res) => {
-    res.json('Hello from the Backend Goblins!');
-})
+app.post("/", (req, res) => {
+  const content = req.body;
+  console.log(content);
 
-app.post('/', (req, res) => {
-    const content = req.body;
-    console.log(content);
-
-    res.json(content);
- })
+  res.json(content);
+});
 
 //Start server
-app.listen(PORT, () => {console.log('listening on port ' + PORT);});
+app.listen(PORT, () => {
+  console.log("listening on port " + PORT);
+});
