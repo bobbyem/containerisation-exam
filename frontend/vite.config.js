@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: "0.0.0.0", // Gör servern tillgänglig på alla nätverksgränssnitt
-    port: 80,
+    port: 5173,
     watch: {
       usePolling: true, // För att stödja live reload i Docker
     },
