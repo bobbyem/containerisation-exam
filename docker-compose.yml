@@ -30,3 +30,12 @@ services:
     environment:
       - REACT_APP_HOST_URL=13.60.62.126
       - REACT_APP_BACKEND_PORT=3000
+
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672" # rabbitmq port number
+      - "15672:15672" # Managment UI
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password

@@ -4,6 +4,7 @@ const cors = require("cors");
 const env = require("dotenv").config();
 const app = express();
 const router = require("./routes/todontroutes");
+const consumer = require("./consumer/consumer");
 
 const HOST_URL = process.env.HOST_URL || "http://localhost";
 const PORT = process.env.PORT || 3000;
@@ -13,6 +14,9 @@ const corsOptions = {
 
 //Try to connect to mongodb server
 connectDB();
+
+//Start consumer
+consumer();
 
 //Middleware
 //Parse JSON
