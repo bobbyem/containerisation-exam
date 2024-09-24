@@ -10,7 +10,7 @@ services:
   backend:
     build: ./backend
     ports:
-      - "80:3000"
+      - "3000:3000"
     depends_on:
       - mongodb
       - rabbitmq
@@ -24,13 +24,13 @@ services:
   frontend:
     build: ./frontend
     ports:
-      - "5173:5173"
+      - "80:5173"
     volumes:
       - ./frontend:/app
       - /app/node_modules
     environment:
-      - REACT_APP_HOST_URL=13.60.62.126
-      - REACT_APP_BACKEND_PORT=3000
+      - REACT_APP_HOST_URL=13.60.62.126 # Not working
+      - REACT_APP_BACKEND_PORT=3000 # Not working
 
   rabbitmq:
     image: rabbitmq:management
