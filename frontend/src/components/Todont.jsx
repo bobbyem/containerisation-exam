@@ -3,7 +3,7 @@ import { URL } from "../configs/url.js";
 export const Todont = ({ title, _id } = props) => {
   const updateTodont = async (id) => {
     try {
-      await fetch(`${URL}/todont`, {
+      await fetch(URL, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
