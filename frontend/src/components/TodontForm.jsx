@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { URL } from "../configs/url";
 
 export const TodontForm = () => {
   const [text, setText] = useState();
@@ -12,7 +13,7 @@ export const TodontForm = () => {
       body: JSON.stringify({ title: todont }),
     };
 
-    fetch("http://localhost:3000/todont", options)
+    fetch(`${URL}/todont`, options)
       .then((resonse) => resonse.json())
       .then((data) => {
         console.log("From Backend ", data);
