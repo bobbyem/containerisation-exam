@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Todont } from "./Todont";
+import { URL } from "../configs/url";
 
 export const Todontlist = () => {
   const [todonts, setTodonts] = useState(null);
 
   const getTodonts = async () => {
     try {
-      await fetch("http://localhost:3000/todont")
+      await fetch(`${URL}/todont`)
         .then((res) => res.json())
         .then((data) => setTodonts(data));
     } catch (err) {
