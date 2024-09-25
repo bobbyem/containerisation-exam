@@ -1,1 +1,1 @@
-export const URL = "http://13.60.62.126:3000";
+export const URL = "http://frontend:3000";
