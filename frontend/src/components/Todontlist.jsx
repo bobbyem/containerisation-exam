@@ -7,7 +7,7 @@ export const Todontlist = () => {
 
   const getTodonts = async () => {
     try {
-      await fetch(`${URL}/todont`)
+      await fetch(URL)
         .then((res) => res.json())
         .then((data) => setTodonts(data));
     } catch (err) {

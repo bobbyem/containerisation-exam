@@ -1,1 +1,1 @@
-export const URL = "http://backend:3000";
+export const URL = "http://backend:3000/todont";
