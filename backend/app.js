@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 const corsOptions = {
   origin: "*", // Eller specifika origins om du vill begränsa det, t.ex. 'http://localhost'
   methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+  allowedHeaders: "*",
 };
 
 //Try to connect to mongodb server
