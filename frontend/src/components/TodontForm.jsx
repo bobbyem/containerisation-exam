@@ -13,7 +13,7 @@ export const TodontForm = () => {
       body: JSON.stringify({ title: todont }),
     };
 
-    fetch(URL, options)
+    fetch("http://backend:3000/todont", options)
       .then((resonse) => resonse.json())
       .then((data) => {
         console.log("From Backend ", data);
