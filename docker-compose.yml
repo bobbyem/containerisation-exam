@@ -6,8 +6,8 @@ services:
       - "27017:27017"
     volumes:
       - ./data/db:/data/db
-    networks:
-      - container_network
+    # networks:
+    #  - container_network
 
   backend:
     build: ./backend
@@ -22,8 +22,8 @@ services:
     volumes:
       - ./backend:/app
       - /app/node_modules
-    networks:
-      - container_network
+    #networks:
+    #  - container_network
 
   frontend:
     build: ./frontend
@@ -37,8 +37,8 @@ services:
     environment:
       - REACT_APP_HOST_URL=13.60.62.126 # Not working
       - REACT_APP_BACKEND_PORT=3000 # Not working
-    networks:
-      - container_network
+    #networks:
+    #  - container_network
 
   rabbitmq:
     image: rabbitmq:management
@@ -50,7 +50,6 @@ services:
       - RABBITMQ_DEFAULT_PASS=password
     networks:
       - container_network
-
-networks:
-  container_network:
-    driver: bridge
+#networks:
+#container_network:
+#  driver: bridge
